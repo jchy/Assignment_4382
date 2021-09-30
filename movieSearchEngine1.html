@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Search Engine 1</title>
+    <title>Movie Search Engine 3</title>
 </head>
 
 <body>
@@ -133,6 +133,13 @@
             // console.log(rating);
             imdbRating.textContent = "⦿ IMDB Rating : " + data.imdbRating + " " + rating;
             movieDetails.append(imdbRating);
+
+            if(data.imdbRating >= 8.5){
+                const remocommendationTag = document.createElement("h3");
+                remocommendationTag.innerHTML = "★ RECOMMENDED MOVIE : Must Watch Before you Die";
+                remocommendationTag.style.color = "#36FF33"
+                movieDetails.append(remocommendationTag);
+            }
 
             container.append(movieDiv, movieDetails);
             movieDetails.style.marginLeft = "50px";
